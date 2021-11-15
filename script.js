@@ -57,10 +57,6 @@ function adicionarEventListenersNaNovaLi(quantidadeTarefasNoHtml) {
     document.getElementsByClassName("fa fa-trash")[quantidadeTarefasNoHtml].addEventListener("click", function(e) {
         deletarTarefa(e);
     });
-
-    document.getElementsByClassName("fa fa-trash")[quantidadeTarefasNoHtml].addEventListener("mouseover", function(e) {
-      //adicionar janela indicando exclusão?  
-    });
 }
 
 function criarNovaLiESuasPropriedadesIniciais(textoDaTarefa, quantidadeTarefasNoHtml) {    
