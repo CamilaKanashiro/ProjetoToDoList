@@ -16,10 +16,10 @@ function inicializarAdicionandoListaDoLocalStorage () {
         var quantidadeTarefasNoHtml = document.getElementsByClassName("tarefa").length; 
 
         while (quantidadeTarefasNoHtml < quantidadeTarefasNoLocalStorage) {
-            var textDaTarefa = objetoTarefasNoLocalStorage.tarefaESuasCaracteristicas[quantidadeTarefasNoHtml].conteudo;
+            var textoDaTarefa = objetoTarefasNoLocalStorage.tarefaESuasCaracteristicas[quantidadeTarefasNoHtml].conteudo;
             var tarefaLocalStorageStatusChecked = objetoTarefasNoLocalStorage.tarefaESuasCaracteristicas[quantidadeTarefasNoHtml].inputChecked;
 
-            criarNovaLiESuasPropriedadesIniciais(textDaTarefa, quantidadeTarefasNoHtml);
+            criarNovaLiESuasPropriedadesIniciais(textoDaTarefa, quantidadeTarefasNoHtml);
 
             var elementoLiTarefa = document.getElementsByClassName("tarefa")[quantidadeTarefasNoHtml];
             var elementoInputDaTarefa = document.getElementsByClassName("checkDaTarefa")[quantidadeTarefasNoHtml];
@@ -45,7 +45,7 @@ function adicionarNovaTarefa() {
 
         document.getElementById("campoInserirTarefa").value = "";
 
-        salvaAtualizacoesNoLocalStorage();
+        salvarAtualizacoesNoLocalStorage();
     }
 }
 
@@ -72,11 +72,10 @@ function alterarStatusTarefa(e) {
     var elementoInputDaTarefa = e.srcElement;
     var tarefaStatusChecked = elementoInputDaTarefa.checked;
     var elementoLiTarefa = elementoInputDaTarefa.parentElement;
-    console.log(elementoLiTarefa);
 
     verificarSeTarefaCheckedParaTacharOuRetirarLinhaTachada (tarefaStatusChecked, elementoLiTarefa);
 
-    salvaAtualizacoesNoLocalStorage();
+    salvarAtualizacoesNoLocalStorage();
 }
 
 function verificarSeTarefaCheckedParaTacharOuRetirarLinhaTachada (tarefaStatusChecked, elementoLiTarefa) {
@@ -91,14 +90,13 @@ function deletarTarefa(e) {
     var elementoLataDeLixo = e.srcElement;
     var elementoLiTarefa = elementoLataDeLixo.parentElement;
     var textoTarefa = elementoLiTarefa.textContent;
-    console.log(textoTarefa);
     if (confirm("Tem certeza que você quer apagar a tarefa: "+ textoTarefa +"?")) {
         elementoLiTarefa.parentNode.removeChild(elementoLiTarefa);
-        salvaAtualizacoesNoLocalStorage();
+        salvarAtualizacoesNoLocalStorage();
     }
 }
 
-function salvaAtualizacoesNoLocalStorage() {
+function salvarAtualizacoesNoLocalStorage() {
     var objetoASerSalvoNoStorage = {
         tarefaESuasCaracteristicas: [],
     };
