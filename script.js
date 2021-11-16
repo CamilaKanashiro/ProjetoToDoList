@@ -64,7 +64,8 @@ function criarNovaLiESuasPropriedadesIniciais(textoDaTarefa, quantidadeTarefasNo
     novaLi.classList.add("tarefa");
     document.getElementById("tarefasListadasNaTela").appendChild(novaLi);
 
-    document.getElementsByClassName("tarefa")[quantidadeTarefasNoHtml].innerHTML = '<input type="checkbox" class="checkDaTarefa">' 
+    document.getElementsByClassName("tarefa")[quantidadeTarefasNoHtml].innerHTML = 
+    '<input type="checkbox" class="checkDaTarefa" title="Marcar tarefa como concluída">' 
     + textoDaTarefa + '<div class="ajusteDeEspacamento"></div><a class="fa fa-trash" title="Deletar tarefa"></a>';
 }
 
