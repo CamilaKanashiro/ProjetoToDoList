@@ -64,22 +64,22 @@ p {
     margin: 4px 0;
 }
 
-#tarefasListadasNaTela li {
+.tarefa{
+    display: inline-flex;
+    padding: 1px 5px;
+    text-orientation: sideways;
     background-color: rgb(196, 234, 238);
     margin: 4px 0;
     border-radius: 3px;
 }
 
-.tarefa{
-    display: flex;
-    justify-content: space-between;
-    padding: 1px 5px;
-    text-orientation: sideways;
-}
-
 .checkDaTarefa {
     cursor: pointer;
     margin: auto 10px auto 4px;
+}
+
+.ajusteDeEspacamento {
+    flex-grow: 10;
 }
 
 a{

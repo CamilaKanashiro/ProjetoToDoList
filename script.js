@@ -65,7 +65,7 @@ function criarNovaLiESuasPropriedadesIniciais(textoDaTarefa, quantidadeTarefasNo
     document.getElementById("tarefasListadasNaTela").appendChild(novaLi);
 
     document.getElementsByClassName("tarefa")[quantidadeTarefasNoHtml].innerHTML = '<input type="checkbox" class="checkDaTarefa">' 
-    + textoDaTarefa + '<a class="fa fa-trash" title="Deletar tarefa"></a>';
+    + textoDaTarefa + '<div class="ajusteDeEspacamento"></div><a class="fa fa-trash" title="Deletar tarefa"></a>';
 }
 
 function alterarStatusTarefa(e) {
